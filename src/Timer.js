@@ -46,6 +46,13 @@ class Timer extends Component {
     this.props.removeTimer(this.props.id)
   }
 
+  componentDidMount(){
+    this.interval = setInterval(this.clockTick, 1000);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
 
 }
 
